@@ -1,7 +1,7 @@
 /*
 Students: Lior Barak, Shalev
 Project Coding Musicians
-
+try new thing
 */
 
 #define _CRT_SECURE_NO_WARNINGS
