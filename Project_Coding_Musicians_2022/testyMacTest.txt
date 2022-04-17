@@ -1,0 +1,16 @@
+clarinet
+cymbals
+drums
+electric guitar
+flute
+French horn
+harmonica
+harp
+accordion
+acoustic guitar
+bagpipes
+banjo
+bass guitar
+bongo drums
+bugle
+cello
