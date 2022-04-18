@@ -9,7 +9,8 @@ void checkAllocation(void* ptr)
 	}
 }
 
-InstrumentTree buildInstrumentsTree(FILE* text, int* count) {
+InstrumentTree buildInstrumentsTree(FILE* text, int* count) 
+{
 	int size, counter = 0;
 	InstrumentTree res;
 
@@ -20,7 +21,8 @@ InstrumentTree buildInstrumentsTree(FILE* text, int* count) {
 	return res;
 }
 
-char** sortedInstrumentsArr(FILE* txt, int* counter) {
+char** sortedInstrumentsArr(FILE* txt, int* counter) 
+{
 	char** instList = (char**)malloc(sizeof(char*));
 	checkAllocation(instList);
 	int lSize = 0, pSize = 1;
@@ -28,10 +30,12 @@ char** sortedInstrumentsArr(FILE* txt, int* counter) {
 	instList[lSize] = (char*)malloc(sizeof(char) * MAX_LINE);
 	checkAllocation(instList);
 
-	while (fgets(instList[lSize], MAX_LINE, txt) != NULL) {
+	while (fgets(instList[lSize], MAX_LINE, txt) != NULL) 
+	{
 		lSize++;
 
-		if (lSize >= pSize) {
+		if (lSize >= pSize) 
+		{
 			pSize *= 2;
 			instList = (char**)realloc(instList, sizeof(char*) * pSize);
 			checkAllocation(instList);
@@ -43,7 +47,8 @@ char** sortedInstrumentsArr(FILE* txt, int* counter) {
 
 	lSize--;
 
-	if (lSize < pSize) {
+	if (lSize < pSize) 
+	{
 		instList = (char**)realloc(instList, sizeof(char*) * lSize);
 		checkAllocation(instList);
 	}
@@ -54,7 +59,8 @@ char** sortedInstrumentsArr(FILE* txt, int* counter) {
 	return instList;
 }
 
-void mergeInstruments(char** arr, int size) {
+void mergeInstruments(char** arr, int size) 
+{
 	char** tmpArr = NULL;
 	if (size <= 1)
 		return;
@@ -75,40 +81,50 @@ void merge(char** a1, int n1, char** a2, int n2, char** res)
 	int ind1, ind2, resInd;
 	ind1 = ind2 = resInd = 0;
 
-	while ((ind1 < n1) && (ind2 < n2)) {
+	while ((ind1 < n1) && (ind2 < n2)) 
+	{
 		upperLowerCase(a2[ind2], a1[ind1]);
 
-		if (strcmp(a2[ind2], a1[ind1]) > 0) {
+		if (strcmp(a2[ind2], a1[ind1]) > 0) 
+		{
 			res[resInd] = a1[ind1];
 			ind1++;
 		}
-		else {
+		else 
+		{
 			res[resInd] = a2[ind2];
 			ind2++;
 		}
 		resInd++;
 	}
 
-	while (ind1 < n1) {
+	while (ind1 < n1) 
+	{
 		res[resInd] = a1[ind1];
 		ind1++;
 		resInd++;
 	}
-	while (ind2 < n2) {
+	while (ind2 < n2) 
+	{
 		res[resInd] = a2[ind2];
 		ind2++;
 		resInd++;
 	}
 }
 
-void upperLowerCase(char* s1, char* s2) {
-	if (s1[0] >= LOWER_A) {
-		if (s2[0] < LOWER_A) {
+void upperLowerCase(char* s1, char* s2) 
+{
+	if (s1[0] >= LOWER_A) 
+	{
+		if (s2[0] < LOWER_A) 
+		{
 			s2[0] = s2[0] + (LOWER_A - UPPER_A);
 		}
 	}
-	else {
-		if (s2[0] >= LOWER_A) {
+	else 
+	{
+		if (s2[0] >= LOWER_A) 
+		{
 			s2[0] = s2[0] - (LOWER_A - UPPER_A);
 		}
 	}
@@ -123,7 +139,8 @@ void copyArr(char** dest, char** src, int size)
 }
 
 TreeNode* buildInstrumentsTreeRec(char** arr, int left, int right, int* id) {
-	if (left > right) {
+	if (left > right) 
+	{
 		return NULL;
 	}
 
@@ -135,7 +152,8 @@ TreeNode* buildInstrumentsTreeRec(char** arr, int left, int right, int* id) {
 	return root;
 }
 
-TreeNode* newTreeNode(char* data, int* Id) {
+TreeNode* newTreeNode(char* data, int* Id) 
+{
 	TreeNode* res = (TreeNode*)malloc(sizeof(TreeNode));
 	checkAllocation(res);
 

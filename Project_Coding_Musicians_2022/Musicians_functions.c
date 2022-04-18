@@ -88,19 +88,23 @@ bool isInstrument(char* string)
 
 //task 4.........
 
-Musician*** constructMCollection(int iSize, Musician** group, int mSize) {
+Musician*** constructMCollection(int iSize, Musician** group, int mSize) 
+{
 	int logSize, phySize;
 	Musician*** res = (Musician***)malloc(sizeof(Musician**) * iSize);
 	checkAllocation(res);
 
-	for (int i = 0; i < iSize; i++) {
+	for (int i = 0; i < iSize; i++) 
+	{
 		res[i] = NULL;
 		logSize = phySize = 0;
-		for (int j = 0; j < mSize; j++) {
+		for (int j = 0; j < mSize; j++) 
+		{
 			checkMusician(group[j], res[i], i, &logSize, &phySize);
 		}
 
-		if (phySize > logSize) {
+		if (phySize > logSize) 
+		{
 			res[i] = (Musician**)realloc(res[i], sizeof(Musician*) * logSize);
 			checkAllocation(res[i]);
 		}
@@ -109,28 +113,32 @@ Musician*** constructMCollection(int iSize, Musician** group, int mSize) {
 	return res;
 }
 
-void checkMusician(Musician* player, Musician** arr, int id, int* lSize, int* pSize) {
+void checkMusician(Musician* player, Musician** arr, int id, int* lSize, int* pSize) 
+{
 	MPIListNode* curr = player->instruments.head;
 	bool found = false;
 
-	while (curr != NULL || !found) {
-		if (curr->data.insId == id) {
+	while (curr != NULL || !found) 
+	{
+		if (curr->data.insId == id) 
 			found = true;
-		}
-		else {
+		else 
 			curr = curr->next;
-		}
 	}
 
-	if (found) {
-		if (arr == NULL) {
+	if (found) 
+	{
+		if (arr == NULL) 
+		{
 			*lSize = *pSize = 1;
 			arr = (Musician**)malloc(sizeof(Musician*) * (*pSize));
 			checkAllocation(arr);
 			arr[*lSize - 1] = player;
 		}
-		else {
-			if (lSize >= pSize) {
+		else 
+		{
+			if (lSize >= pSize) 
+			{
 				*pSize = (*pSize) * 2;
 				arr = (Musician**)realloc(arr, sizeof(Musician*) * (*pSize));
 				checkAllocation(arr);

@@ -14,7 +14,8 @@ void main()
     int instCount;
     ptr = fopen("TestyMctestface.txt", "r");
 
-    if (ptr == NULL) {
+    if (ptr == NULL) 
+    {
         printf("file can't be opened \n");
     }
 
