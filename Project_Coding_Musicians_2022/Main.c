@@ -5,11 +5,7 @@ Project Coding Musicians
 try new thing
 */
 
-
-
 #include "FunctionsI.h"
-#include "FunctionsM.h"
-#include "FunctionsC.h"
 
 void main()
 {
