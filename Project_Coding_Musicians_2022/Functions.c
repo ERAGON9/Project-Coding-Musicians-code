@@ -104,14 +104,14 @@ void merge(char** a1, int n1, char** a2, int n2, char** res)
 }
 
 void upperLowerCase(char* s1, char* s2) {
-	if (s1[0] >= 'a') {
-		if (s2[0] < 'a') {
-			s2[0] = s2[0] + ('a' - 'A');
+	if (s1[0] >= LOWER_A) {
+		if (s2[0] < LOWER_A) {
+			s2[0] = s2[0] + (LOWER_A - UPPER_A);
 		}
 	}
 	else {
-		if (s2[0] >= 'a') {
-			s2[0] = s2[0] - ('a' - 'A');
+		if (s2[0] >= LOWER_A) {
+			s2[0] = s2[0] - (LOWER_A - UPPER_A);
 		}
 	}
 }
@@ -148,3 +148,58 @@ TreeNode* newTreeNode(char* data, int* Id) {
 
 	return res;
 }
+
+//Musician*** constructMCollection(int iSize, Musician* group, int mSize) {
+//	Musician*** res = (Musician***)malloc(sizeof(Musician**) * iSize);
+//	checkAllocation(res);
+//	bool playIt = false;
+//	int logSize, phySize;
+//
+//	for(int i = 0; i < iSize; i++) {
+//		res[i] = NULL;
+//		logSize = phySize = 0;
+//		for (int j = 0; j < mSize; j++) {
+//			checkMusician(group[j], res[i], i, &logSize, &phySize);
+//		}
+//		
+//		if (phySize > logSize) {
+//			res[i] = (Musician**)realloc(res[i], sizeof(Musician*) * logSize);
+//			checkAllocation(res[i]);
+//		}
+//	}
+//
+//	return res;
+//}
+//
+//void checkMusician(Musician player, Musician** arr, int id, int* lSize, int* pSize) {
+//	MPIListNode* curr = player.instruments.head;
+//	bool found = false;
+//
+//	while (curr != NULL || !found) {
+//		if (curr->data.insId == id) {
+//			found = true;
+//		}
+//		else {
+//			curr = curr->next;
+//		}
+//	}
+//
+//	if (found) {
+//		if (arr == NULL) {
+//			*lSize = *pSize = 1;
+//			arr = (Musician**)malloc(sizeof(Musician*) * (*pSize));
+//			checkAllocation(arr);
+//			arr[*lSize - 1] = &player;
+//		}
+//		else {
+//			if (lSize >= pSize) {
+//				*pSize = (*pSize) * 2;
+//				arr = (Musician**)realloc(arr, sizeof(Musician*) * (*pSize));
+//				checkAllocation(arr);
+//			}
+//
+//			arr[*lSize] = &player;
+//			*lSize = *lSize + 1;
+//		}
+//	}
+//}

@@ -22,6 +22,8 @@ typedef struct tree
 } InstrumentTree;
 
 #define MAX_LINE 150
+#define LOWER_A 'a'
+#define UPPER_A 'A'
 
 
 //This function checks if the memory allocation has failed.
