@@ -76,15 +76,11 @@ void merge(char** a1, int n1, char** a2, int n2, char** res)
 {
 	int ind1, ind2, resInd;
 	ind1 = ind2 = resInd = 0;
-	char* tmp1 = (char*)malloc(sizeof(char) * MAX_LINE);
-	checkAllocation(tmp1);
-	char* tmp2 = (char*)malloc(sizeof(char) * MAX_LINE);
-	checkAllocation(tmp2);
 
 	while ((ind1 < n1) && (ind2 < n2)) {
-		upperLowerCase(&tmp1, &tmp2, a2[ind2], a1[ind1]);
+		upperLowerCase(a2[ind2], a1[ind1]);
 
-		if (strcmp(tmp1, tmp2) > 0) {
+		if (strcmp(a2[ind2], a1[ind1]) > 0) {
 			res[resInd] = a1[ind1];
 			ind1++;
 		}
@@ -105,29 +101,17 @@ void merge(char** a1, int n1, char** a2, int n2, char** res)
 		ind2++;
 		resInd++;
 	}
-
 }
 
-void upperLowerCase(char** t1, char** t2, char* s1, char* s2) {
-
-	*t1 = s1;
-
+void upperLowerCase(char* s1, char* s2) {
 	if (s1[0] >= 'a') {
 		if (s2[0] < 'a') {
-			*t2 = s2;
-			(*t2)[0] = (*t2)[0] + ('a' - 'A');
-		}
-		else {
-			*t2 = s2;
+			s2[0] = s2[0] + ('a' - 'A');
 		}
 	}
 	else {
 		if (s2[0] >= 'a') {
-			*t2 = s2;
-			(*t2)[0] = (*t2)[0] - ('a' - 'A');
-		}
-		else {
-			*t2 = s2;
+			s2[0] = s2[0] - ('a' - 'A');
 		}
 	}
 }

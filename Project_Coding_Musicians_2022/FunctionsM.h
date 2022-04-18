@@ -34,6 +34,11 @@ typedef struct
 
 } Musician;
 
+////
+//Musician*** constructMCollection(int iSize, Musician* group, int mSize);
+//
+////
+//void checkMusician(Musician player, Musician** arr, int id, int* lSize, int* pSize);
 
 
 #endif
