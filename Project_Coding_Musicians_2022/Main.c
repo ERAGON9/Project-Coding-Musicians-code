@@ -15,14 +15,14 @@ void main()
 {
     FILE* ptr;
     InstrumentTree instruments;
-    ptr = fopen("testyMacTest.txt", "r");
+    int instCount;
+    ptr = fopen("TestyMctestface.txt", "r");
 
     if (ptr == NULL) {
         printf("file can't be opened \n");
     }
 
-    instruments = buildInstrumentsTree(ptr);
-    printTreeInorder(instruments);
+    instruments = buildInstrumentsTree(ptr, &instCount);
 
     // freeAll();
 	fclose(ptr);

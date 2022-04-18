@@ -1,2 +1,8 @@
 ﻿  Functions.c
-  Project_Coding_Musicians_2022.vcxproj -> C:\Users\admin\Source\Repos\ERAGON9\Project-Coding-Musicians-code\Project_Coding_Musicians_2022\x64\Debug\Project_Coding_Musicians_2022.exe
+C:\Users\admin\source\repos\ERAGON9\Project-Coding-Musicians-code\Project_Coding_Musicians_2022\Functions.c(86,23): warning C4047: 'function': 'char *' differs in levels of indirection from 'char **'
+C:\Users\admin\source\repos\ERAGON9\Project-Coding-Musicians-code\Project_Coding_Musicians_2022\Functions.c(86,18): warning C4024: 'upperLowerCase': different types for formal and actual parameter 1
+C:\Users\admin\source\repos\ERAGON9\Project-Coding-Musicians-code\Project_Coding_Musicians_2022\Functions.c(86,30): warning C4047: 'function': 'char *' differs in levels of indirection from 'char **'
+C:\Users\admin\source\repos\ERAGON9\Project-Coding-Musicians-code\Project_Coding_Musicians_2022\Functions.c(86,25): warning C4024: 'upperLowerCase': different types for formal and actual parameter 2
+C:\Users\admin\source\repos\ERAGON9\Project-Coding-Musicians-code\Project_Coding_Musicians_2022\Functions.c(131,28): warning C4028: formal parameter 1 different from declaration
+C:\Users\admin\source\repos\ERAGON9\Project-Coding-Musicians-code\Project_Coding_Musicians_2022\Functions.c(131,39): warning C4028: formal parameter 2 different from declaration
+  Project_Coding_Musicians_2022.vcxproj -> C:\Users\admin\source\repos\ERAGON9\Project-Coding-Musicians-code\Project_Coding_Musicians_2022\x64\Debug\Project_Coding_Musicians_2022.exe

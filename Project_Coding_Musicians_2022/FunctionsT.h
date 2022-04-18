@@ -23,6 +23,7 @@ typedef struct tree
 
 #define MAX_LINE 150
 
+
 //This function checks if the memory allocation has failed.
 void checkAllocation(void* ptr);
 
@@ -36,6 +37,11 @@ TreeNode* buildInstrumentsTreeRec(char** arr, int left, int right, int* id);
 //This function copys the given 'src' array's data into the given 'dest' array.
 void copyArr(char** dest, char** src, int size);
 
+//This function checks if a given pointer to a string ('t1') starts with upper or lower case,
+//and copys both of the given strings (pointed by 't1' and 't2') to the given arrays ('s1' and 's2')
+//while changing the strings to start at the same case.
+void upperLowerCase(char** t1, char** t2, char* s1, char* s2);
+
 //This function merges two given lexicographically sorted arrays into one sorted array ('res').
 void merge(char** a1, int n1, char** a2, int n2, char** res);
 
@@ -48,9 +54,6 @@ char** sortedInstrumentsArr(FILE* txt, int* counter);
 
 //This function creates and returns a binary search tree (while each of its nodes' data is
 //a line from the given text file).
-InstrumentTree buildInstrumentsTree(FILE* text);
-
-
-
+InstrumentTree buildInstrumentsTree(FILE* text, int* count);
 
 #endif

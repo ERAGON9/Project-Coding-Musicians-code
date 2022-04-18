@@ -11,12 +11,13 @@ void checkAllocation(void* ptr)
 	}
 }
 
-InstrumentTree buildInstrumentsTree(FILE* text) {
+InstrumentTree buildInstrumentsTree(FILE* text, int* count) {
 	int size, counter = 0;
 	InstrumentTree res;
 
 	char** arr = sortedInstrumentsArr(text, &size);
 	res.root = buildInstrumentsTreeRec(arr, 0, size - 1, &counter);
+	*count = counter;
 
 	return res;
 }
@@ -81,26 +82,7 @@ void merge(char** a1, int n1, char** a2, int n2, char** res)
 	checkAllocation(tmp2);
 
 	while ((ind1 < n1) && (ind2 < n2)) {
-		tmp1 = a2[ind2];
-		if (a2[ind2][0] >= 'a') {
-			if (a1[ind1][0] < 'a') {
-				tmp2 = a1[ind1];
-				tmp2[0] = tmp2[0] + ('a' - 'A');
-			}
-			else {
-				tmp2 = a1[ind1];
-			}
-		}
-		else {
-			if (a1[ind1][0] >= 'a') {
-				tmp2 = a1[ind1];
-				tmp2[0] = tmp2[0] - ('a' - 'A');
-			}
-			else {
-				tmp2 = a1[ind1];
-			}
-		}
-
+		upperLowerCase(&tmp1, &tmp2, a2[ind2], a1[ind1]);
 
 		if (strcmp(tmp1, tmp2) > 0) {
 			res[resInd] = a1[ind1];
@@ -124,6 +106,30 @@ void merge(char** a1, int n1, char** a2, int n2, char** res)
 		resInd++;
 	}
 
+}
+
+void upperLowerCase(char** t1, char** t2, char* s1, char* s2) {
+
+	*t1 = s1;
+
+	if (s1[0] >= 'a') {
+		if (s2[0] < 'a') {
+			*t2 = s2;
+			(*t2)[0] = (*t2)[0] + ('a' - 'A');
+		}
+		else {
+			*t2 = s2;
+		}
+	}
+	else {
+		if (s2[0] >= 'a') {
+			*t2 = s2;
+			(*t2)[0] = (*t2)[0] - ('a' - 'A');
+		}
+		else {
+			*t2 = s2;
+		}
+	}
 }
 
 void copyArr(char** dest, char** src, int size)
@@ -158,4 +164,3 @@ TreeNode* newTreeNode(char* data, int* Id) {
 
 	return res;
 }
-
