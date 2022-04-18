@@ -1,58 +1,7 @@
-/*
-Students: Lior Barak, Shalev
-Project Coding Musicians
-try new thing
-*/
-
-#define _CRT_SECURE_NO_WARNINGS
-
-#include <stdio.h>
-#include <stdlib.h>
 
 
-typedef struct treeNode
-{
-	char* instrument; // שם כלי הנגינה
-	unsigned short insId; // מספר מזהה יחודי עבור כלי נגינה שבאחריותכם לתת
-	struct treeNode* left;
-	struct treeNode* right;
+#include "Musician.h" // include inside at the begining a call for "Instrument Tree.h"
 
-} TreeNode;
-
-typedef struct tree 
-{
-	TreeNode* root;
-
-} InstrumentTree;
-
-
-typedef struct
-{
-	unsigned short insId; // מספר מזהה יחודי עבור כלי נגינה שבאחריותכם לתת
-	float price; // מחיר שדורש הנגן עבור נגינה בכלי זה
-
-} MusicianPriceInstrument;
-
-typedef struct mpilistnode // -+
-{
-	MusicianPriceInstrument data;
-	struct mpilistnode* next;
-
-}MPIListNode;
-
-typedef struct mpilist // -+
-{
-	MPIListNode* head;
-	MPIListNode* tail;
-
-}MPIList;
-
-typedef struct
-{
-	char** name; // מערך של השמות המרכיבים את שמו המלא
-	MPIList instruments; // כלי הנגינה ברשימה מקושרת של MusicianPriceInstrument
-
-} Musician;
 
 
 typedef struct
@@ -93,10 +42,11 @@ typedef struct
 } Concert;
 
 
-
-int findInsId(InstrumentTree tree, char* instrument); 
+ 
 
 void main()
 {
+	
 
+	
 }

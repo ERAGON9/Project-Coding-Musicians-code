@@ -139,7 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Instrument Tree.c" />
     <ClCompile Include="Main.c" />
+    <ClCompile Include="Musician.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Instrument Tree.h" />
+    <ClInclude Include="Musician.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
