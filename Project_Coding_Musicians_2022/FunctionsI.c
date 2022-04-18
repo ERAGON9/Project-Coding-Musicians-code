@@ -1,4 +1,4 @@
-#include "FunctionsT.h"
+#include "FunctionsI.h"
 #include "FunctionsM.h"
 #include "FunctionsC.h"
 
@@ -149,57 +149,32 @@ TreeNode* newTreeNode(char* data, int* Id) {
 	return res;
 }
 
-//Musician*** constructMCollection(int iSize, Musician* group, int mSize) {
-//	Musician*** res = (Musician***)malloc(sizeof(Musician**) * iSize);
-//	checkAllocation(res);
-//	bool playIt = false;
-//	int logSize, phySize;
-//
-//	for(int i = 0; i < iSize; i++) {
-//		res[i] = NULL;
-//		logSize = phySize = 0;
-//		for (int j = 0; j < mSize; j++) {
-//			checkMusician(group[j], res[i], i, &logSize, &phySize);
-//		}
-//		
-//		if (phySize > logSize) {
-//			res[i] = (Musician**)realloc(res[i], sizeof(Musician*) * logSize);
-//			checkAllocation(res[i]);
-//		}
-//	}
-//
-//	return res;
-//}
-//
-//void checkMusician(Musician player, Musician** arr, int id, int* lSize, int* pSize) {
-//	MPIListNode* curr = player.instruments.head;
-//	bool found = false;
-//
-//	while (curr != NULL || !found) {
-//		if (curr->data.insId == id) {
-//			found = true;
-//		}
-//		else {
-//			curr = curr->next;
-//		}
-//	}
-//
-//	if (found) {
-//		if (arr == NULL) {
-//			*lSize = *pSize = 1;
-//			arr = (Musician**)malloc(sizeof(Musician*) * (*pSize));
-//			checkAllocation(arr);
-//			arr[*lSize - 1] = &player;
-//		}
-//		else {
-//			if (lSize >= pSize) {
-//				*pSize = (*pSize) * 2;
-//				arr = (Musician**)realloc(arr, sizeof(Musician*) * (*pSize));
-//				checkAllocation(arr);
-//			}
-//
-//			arr[*lSize] = &player;
-//			*lSize = *lSize + 1;
-//		}
-//	}
-//}
+// The function get a tree of instruments and a string (instrument name).
+//It's return the insid of the instrument or EROR(-1) if not found.
+int findInsId(InstrumentTree tree, char* instrument) 
+{
+	findInsIdRec(tree.root, instrument);
+}
+
+// The function get a treeNode of instrument (the root at the start) and a string (instrument name).
+//It's a recursive function that find the instrument insid and return it.
+int findInsIdRec(TreeNode* trNode, char* instrument) 
+{
+	if (trNode == NULL)
+		return EROR;
+
+	else
+	{
+		int compare = strcmp(instrument, trNode->instrument);
+
+		if (compare == 0)
+			return trNode->insId;
+
+		else if (compare > 0)
+			return findInsIdRec(trNode->right, instrument);
+
+		else // compare < 0
+			return findInsIdRec(trNode->left, instrument);
+	}
+}
+

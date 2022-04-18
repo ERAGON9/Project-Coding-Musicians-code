@@ -1,10 +1,15 @@
-#ifndef __FunctionsT_h
-#define __FunctionsT_h
+#pragma once
 #define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+
+#define MAX_LINE 150
+#define LOWER_A 'a'
+#define UPPER_A 'A'
+#define EROR -1
 
 typedef struct treeNode
 {
@@ -20,10 +25,6 @@ typedef struct tree
 	TreeNode* root;
 
 } InstrumentTree;
-
-#define MAX_LINE 150
-#define LOWER_A 'a'
-#define UPPER_A 'A'
 
 
 //This function checks if the memory allocation has failed.
@@ -58,4 +59,5 @@ char** sortedInstrumentsArr(FILE* txt, int* counter);
 //a line from the given text file).
 InstrumentTree buildInstrumentsTree(FILE* text, int* count);
 
-#endif
+int findInsId(InstrumentTree tree, char* instrument);
+int findInsIdRec(TreeNode* trNode, char* instrument);
