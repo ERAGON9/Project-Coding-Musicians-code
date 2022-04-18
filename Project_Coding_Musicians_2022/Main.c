@@ -1,15 +1,11 @@
 /*
-Students:   Lior Barak
+Students:   Lior Barak   206631418
 			Shalev Kedar 314714080
 Project Coding Musicians
-try new thing
+
 */
 
-
-
-#include "FunctionsI.h"
-#include "FunctionsM.h"
-#include "FunctionsC.h"
+#include "Concert_header.h"
 
 void main()
 {

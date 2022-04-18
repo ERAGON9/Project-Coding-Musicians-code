@@ -139,14 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FunctionsI.c" />
-    <ClCompile Include="FunctionsM.c" />
+    <ClCompile Include="Instrument_functions.c" />
+    <ClCompile Include="Musicians_functions.c" />
     <ClCompile Include="Main.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FunctionsC.h" />
-    <ClInclude Include="FunctionsM.h" />
-    <ClInclude Include="FunctionsI.h" />
+    <ClInclude Include="Concert_header.h" />
+    <ClInclude Include="Musicians_header.h" />
+    <ClInclude Include="Instrument_header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
