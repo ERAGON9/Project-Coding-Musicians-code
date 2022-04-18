@@ -18,21 +18,21 @@
     <ClCompile Include="Main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FunctionsI.c">
+    <ClCompile Include="Instrument_functions.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FunctionsM.c">
+    <ClCompile Include="Musicians_functions.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FunctionsI.h">
+    <ClInclude Include="Instrument_header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FunctionsM.h">
+    <ClInclude Include="Musicians_header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FunctionsC.h">
+    <ClInclude Include="Concert_header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
