@@ -18,18 +18,32 @@
     <ClCompile Include="Main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Instrument Tree.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Musician.c">
+=======
+    <ClCompile Include="Functions.c">
+>>>>>>> 5fcfdbf42e3604e9979498bfb55e2de6d6cc6736
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ClInclude Include="Instrument Tree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Musician.h">
+=======
+    <ClInclude Include="FunctionsT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionsM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionsC.h">
+>>>>>>> 5fcfdbf42e3604e9979498bfb55e2de6d6cc6736
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
