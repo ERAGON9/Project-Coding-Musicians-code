@@ -1,6 +1,4 @@
-#include "FunctionsI.h"
-#include "FunctionsM.h"
-#include "FunctionsC.h"
+#include "Instrument_header.h"
 
 //This function checks if the memory allocation has failed.
 void checkAllocation(void* ptr)
